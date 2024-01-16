@@ -8,7 +8,7 @@ import { Tooltip } from "react-tooltip";
 import {UserMinusIcon as HangUpIcon} from "@heroicons/react/20/solid";
 import CrossLineDiv from "@/common/components/cross-div";
 import { ArrowUpCircleIcon as ShareScreenIcon, ChatBubbleLeftIcon as ChatIcon } from "@heroicons/react/16/solid";
-const controlPanel = ({
+const ControlPanel = ({
   muted,
   visible,
   chat,
@@ -109,4 +109,4 @@ type ControlPanelProps = {
 
 const common = "p-3 rounded-xl text-white";
 
-export default controlPanel;
+export default ControlPanel;

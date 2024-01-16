@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useUser } from '@auth0/nextjs-auth0/client';
 import { UserIcon } from '@heroicons/react/24/solid';
+import Image from 'next/image';
 
 const Header = () => {
   const userMetadata = useUser();
@@ -34,7 +35,7 @@ const Header = () => {
               >
                 <span className="sr-only">Open user menu</span>
                 {userMetadata.user?.picture ? (
-                  <img
+                  <Image
                     className="h-8 w-8 rounded-full"
                     src={userMetadata.user.picture}
                     alt=""

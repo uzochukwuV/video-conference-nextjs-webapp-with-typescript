@@ -97,7 +97,7 @@ export default function UsersConnectionProvider({
     return () => {
       socket.off("user:joined");
     };
-  }, [peer]);
+  }, [peer, socket]);
 
   useEffect(() => {
     if (!peer) return;
