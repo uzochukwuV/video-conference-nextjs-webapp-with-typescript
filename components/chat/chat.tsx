@@ -19,7 +19,7 @@ const Chat = ()=> {
         return ()=> {
             socket.off('chat:get');
         }
-    }, []);
+    }, [socket]);
 
     function sendMessage(e:React.KeyboardEvent<HTMLInputElement>) {
         const messageText = (e.target as HTMLInputElement).value;

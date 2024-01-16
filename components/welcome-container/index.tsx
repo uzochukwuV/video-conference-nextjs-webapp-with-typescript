@@ -16,7 +16,7 @@ export default function WelcomeContainer({
                     Video calls.
                   </span>{' '}
                   <span className="block text-emerald-500 xl:inline">
-                    Now "expensive" for everyone.
+                    Now &ldquo;expensive&ldquo; for everyone.
                   </span>
                 </h1>
                 <p className="mt-3 text-base text-gray-300 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">

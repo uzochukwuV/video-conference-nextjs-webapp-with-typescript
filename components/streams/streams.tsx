@@ -12,7 +12,8 @@ export default function Streams({
     muted,
     visible
 }:StreamsProps) {
-    const shared = sharedScreen  ?? useContext(UsersStateContext).sharedScreenTrack;
+    const sharedContext = useContext(UsersStateContext).sharedScreenTrack;
+    const shared = sharedScreen  ?? sharedContext;
 
     return (
         <div

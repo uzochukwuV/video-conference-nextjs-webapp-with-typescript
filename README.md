@@ -31,7 +31,10 @@ initialised socket in app anmd create context for it
 4. /index.tsx
 create room and join room logic
 A. 
-#    i. create room route room/[id]
+# with relative path
+![Alt text](./relative_path/to/img.jpg?raw=true)
+
+    i. create room route room/[id]
 #    ii. create id using nanoid`s customAlphabet to generate random letters` in utils/ 
 #    iii. set user as host in localstorage
 #    iv. route user to room/[id]
@@ -76,6 +79,12 @@ chat modal
 
 forehand
 ~~~~~ create userContextsettings for keeping states of all users streams and state
+~~~~~ usersettings handle audio and video on and off toggle function
+~~~~~ userconnection handles user join(peer call and on call), user left and user sharedscreen and stop shared screen
+~~~~~ useScreen uses mediadevise getDisplayMedia which provides the screenshare
+~~~~~ use peer is import using default import
 ~~~~~ 
+
+
 
 
