@@ -107,7 +107,7 @@ export default function App({ stream }: { stream: MediaStream }) {
     return () => {
       socket.off('host:muted-user')
     }
-  }, [myId, socket, toggleKind])
+  }, [myId, socket])
 
   if (!isPeerReady) return ''
   if (!peer) return ''

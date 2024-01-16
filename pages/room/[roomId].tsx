@@ -25,8 +25,11 @@ const Page:NextPage = ()=> {
 export default Page;
 
 
-// export const getServerSideProps = async(
-//     ctx: GetServerSidePropsContext<any, PreviewData>
-// )=> await withPageAuthRequired({
-//     returnTo: '/room/' + ctx.query.roomId
-// })
+export const getServerSideProps = async(
+    ctx: GetServerSidePropsContext<any, PreviewData>
+)=> await withPageAuthRequired({
+    returnTo: '/room/' + ctx.query.roomId
+})(ctx);
+
+
+  
