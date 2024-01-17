@@ -10,6 +10,7 @@ import { useUser } from "@auth0/nextjs-auth0/client";
 import { createContext, useContext, useEffect, useState } from "react";
 import { useMediaStream } from "@/hooks";
 import { append } from "@/common/utils";
+import { log } from "console";
 
 
 export const UsersConnectionContext = createContext<any>({});
@@ -65,6 +66,8 @@ export default function UsersConnectionProvider({
           visible: initVisible,
           muted: initMuted,
         });
+        console.log('calling user '+ name);
+        
         const call = peer.call(id, stream, {
           metadata: {
             user: {
@@ -77,6 +80,8 @@ export default function UsersConnectionProvider({
         });
 
         call.on("stream", (stream: MediaStream) => {
+          console.log('user streamed');
+          
           setStreams(
             append({
               [id]: <PeerVideo stream={stream} isMe={false} name={name} />,
@@ -92,12 +97,18 @@ export default function UsersConnectionProvider({
         setIsHidden(append({ [id]: !initVisible }));
         setAvatars(append({ [id]: picture }));
         setNames(append({ [id]: name }));
+
+        console.log('set users and logging ...');
+        
+        
       }
     );
+    
+    
     return () => {
       socket.off("user:joined");
     };
-  }, [peer, socket]);
+  }, [peer]);
 
   useEffect(() => {
     if (!peer) return;
@@ -119,6 +130,8 @@ export default function UsersConnectionProvider({
         "user-id": peer,
         "user-name": user.name,
       });
+      
+      
 
       call.on("stream", (stream: MediaStream) => {
         setStreams(
@@ -136,6 +149,10 @@ export default function UsersConnectionProvider({
 
   useEffect(() => {
     socket.on("user:left", (peerId: PeerId) => {
+      console.log(peerId+ ' is leaving');
+      
+      console.log(users);
+      
       if (myId === peerId) router.push("/");
       else {
         delete streams[peerId];

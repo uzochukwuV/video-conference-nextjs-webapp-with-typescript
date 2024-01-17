@@ -36,6 +36,8 @@ const Header = () => {
                 <span className="sr-only">Open user menu</span>
                 {userMetadata.user?.picture ? (
                   <Image
+                    width={80}
+                    height={80}
                     className="h-8 w-8 rounded-full"
                     src={userMetadata.user.picture}
                     alt=""

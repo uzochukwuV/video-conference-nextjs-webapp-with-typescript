@@ -12,10 +12,6 @@ export default function OtherStreams() {
     const {leaveRoom} = useContext(UsersConnectionContext)
     const {muteUser} = useContext(UsersUpdaterContext)
 
-    useEffect(()=> {
-        console.log(streams);
-        
-    })
 
     return (
         <>
